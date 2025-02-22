@@ -259,20 +259,20 @@ fn group_by_line_length(src: &[u8]) -> Vec<String> {
             line_buf.extend(seg);
             // println!("Extended by {}, length now {}", seg.len(), line_buf.len());
         } else if line_buf.len() + seg.len() == 70 {
-            println!("Edge case");
+            // println!("Edge case");
             line_buf.extend(seg);
             line_buf.push(b'\n');
 
             out_buf.push(String::from_utf8(line_buf.clone()).unwrap());
 
             line_buf.clear();
-            println!("Length now {}", line_buf.len());
+            // println!("Length now {}", line_buf.len());
         } else {
-            println!("Pushing newline");
+            // println!("Pushing newline");
             line_buf.push(b'\n');
             out_buf.push(String::from_utf8(line_buf.clone()).unwrap());
             line_buf.clear();
-            println!("Length now {}", line_buf.len());
+            // println!("Length now {}", line_buf.len());
 
             line_buf.extend(seg);
         }
@@ -331,12 +331,12 @@ impl PPMReader<'_> {
 
             if line_buffer.len() > 70 {
                 let mut nl_idx = 70;
-                println!("Finished with buffering, grouping long line");
+                // println!("Finished with buffering, grouping long line");
                 // Replace last in line buffer
                 loop {
                     if let Some(value) = line_buffer.get_mut(nl_idx) {
                         if *value == b' ' {
-                            println!("Found suitable NL at {nl_idx}!");
+                            // println!("Found suitable NL at {nl_idx}!");
                             *value = b'\n';
                             break;
                         }

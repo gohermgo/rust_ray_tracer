@@ -1,0 +1,3 @@
+[submodule "geometry"]
+	path = geometry
+	url = git@github.com:gohermgo/geometry.git

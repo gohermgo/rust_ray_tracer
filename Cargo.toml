@@ -1,0 +1,12 @@
+[workspace]
+edition = "2024"
+version = "0.1.0"
+members = ["geometry"]
+
+[package]
+name = "rust-ray-tracer"
+edition = "2024"
+version = "0.1.0"
+
+[dependencies]
+geometry.path = "geometry"
